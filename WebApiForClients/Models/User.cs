@@ -9,6 +9,7 @@ namespace WebApiForClients.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int DateSale { get; set; }
+        //public ulong DateSale { get; set; }
+        public string DateSale { get; set; }
     }
 }
