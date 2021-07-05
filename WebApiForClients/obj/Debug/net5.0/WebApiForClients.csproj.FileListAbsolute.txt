@@ -51,3 +51,4 @@ D:\CSharp\EastWestTZ\WebApiForClients\WebApiForClients\obj\Debug\net5.0\WebApiFo
 D:\CSharp\EastWestTZ\WebApiForClients\WebApiForClients\obj\Debug\net5.0\ref\WebApiForClients.dll
 D:\CSharp\EastWestTZ\WebApiForClients\WebApiForClients\obj\Debug\net5.0\WebApiForClients.pdb
 D:\CSharp\EastWestTZ\WebApiForClients\WebApiForClients\obj\Debug\net5.0\WebApiForClients.genruntimeconfig.cache
+D:\CSharp\EastWestTZ\WebApiForClients\WebApiForClients\obj\Debug\net5.0\WebApiForClients.csproj.AssemblyReference.cache

@@ -14,15 +14,15 @@ namespace WebApiForClients.Controllers
     public class UsersController : ControllerBase
     {
         UsersContext db;
-
         public UsersController(UsersContext context)
         {
             db = context;
-            
             if (!db.Users.Any())
             {
-                //db.Users.Add(new Models.User { Name = "Ilya", DateSale = 04072021});
-                db.Users.Add(new Models.User { Name = "Ilya", DateSale = DateTime.Now.ToString()});
+                db.Users.Add(new Models.User { Name = "Ilya", DateSale = DateTime.Now.ToString() });
+                db.Users.Add(new Models.User { Name = "Vasya", DateSale = DateTime.Now.ToString() });
+                db.Users.Add(new Models.User { Name = "Petya", DateSale = DateTime.Now.ToString() });
+                db.Users.Add(new Models.User { Name = "Anna", DateSale = DateTime.Now.ToString() });
                 // db.Users.Add(new Models.User { Name = "Vasya", DateSale = 12032021 });
                 // db.Users.Add(new Models.User { Name = "Ilya2", DateSale = DateTime.Now });
                 // db.Users.Add(new Models.User { Name = "Vasya2", DateSal = DateTime.Now });
@@ -37,10 +37,28 @@ namespace WebApiForClients.Controllers
             return await db.Users.ToListAsync();
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<User>>> Get(int id)
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<IEnumerable<User>>> GetById([FromRoute] int id)
         {
             User user = await db.Users.FirstOrDefaultAsync(x => x.Id == id);
+            if (user == null)
+                return NotFound();
+            return new ObjectResult(user);
+        }
+
+        [HttpGet("{name}")]
+        public async Task<ActionResult<IEnumerable<User>>> GetName([FromRoute] string name)
+        {
+            User user = await db.Users.FirstOrDefaultAsync(x => x.Name == name);
+            if (user == null)
+                return NotFound();
+            return new ObjectResult(user);
+        }
+
+        [HttpGet("{dateSale:datetime}")]
+        public async Task<ActionResult<IEnumerable<User>>> GetDateSale(string dateSale)
+        {
+            User user = await db.Users.FirstOrDefaultAsync(x => x.DateSale == dateSale);
             if (user == null)
                 return NotFound();
             return new ObjectResult(user);
