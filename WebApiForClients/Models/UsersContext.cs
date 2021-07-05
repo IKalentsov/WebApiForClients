@@ -13,7 +13,6 @@ namespace WebApiForClients.Models
             : base(options)
         {
             Database.EnsureCreated();
-            // Database.EnsureDeleted();
         }
     }
 }

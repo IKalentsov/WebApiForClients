@@ -10,7 +10,6 @@ namespace WebApiForClients.Controllers
     {
         public IActionResult Index()
         {
-            // return Content("Hello");
             ViewData["Message"] = "Hello!";
             return View("Index");
         }

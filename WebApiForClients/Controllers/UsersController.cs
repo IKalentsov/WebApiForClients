@@ -23,9 +23,6 @@ namespace WebApiForClients.Controllers
                 db.Users.Add(new Models.User { Name = "Vasya", DateSale = DateTime.Now.ToString() });
                 db.Users.Add(new Models.User { Name = "Petya", DateSale = DateTime.Now.ToString() });
                 db.Users.Add(new Models.User { Name = "Anna", DateSale = DateTime.Now.ToString() });
-                // db.Users.Add(new Models.User { Name = "Vasya", DateSale = 12032021 });
-                // db.Users.Add(new Models.User { Name = "Ilya2", DateSale = DateTime.Now });
-                // db.Users.Add(new Models.User { Name = "Vasya2", DateSal = DateTime.Now });
                 db.SaveChanges();
             }
         }
